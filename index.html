@@ -248,11 +248,12 @@
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
     setInterval(() => {
-setInterval(() => {
+  const scrollY = window.scrollY; // Salva a posição de rolagem atual
   images[current].classList.remove('active');
   current = (current + 1) % images.length;
   images[current].classList.add('active');
-}, 8000); 
+  window.scrollTo(0, scrollY); // Restaura a posição de rolagem
+}, 8000);
 
     // Timer
     const startDate = new Date("2021-09-18T00:00:00");
